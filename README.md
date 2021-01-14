@@ -1,1 +1,1 @@
-# OSI
+# OSI model
