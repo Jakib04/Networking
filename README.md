@@ -5,5 +5,6 @@
 
 ## The important layers are 
 
-* ## Physical Layer (Layer 1) : The lowest layer of the OSI reference model is the physical layer. It is responsible for the actual physical connection between the devices. The physical layer contains information in the form of bits. Hub, Repeater, Modem, Cables are Physical Layer devices.
+* # Physical Layer (Layer 1) : 
+   # The lowest layer of the OSI reference model is the physical layer. It is responsible for the actual physical connection between the devices. The physical layer contains information in the form of bits. Hub, Repeater, Modem, Cables are Physical Layer devices.
 * ## 
