@@ -27,8 +27,8 @@ The Open Systems Interconnection (OSI) model describes seven layers that compute
 
    The lowest layer of the OSI reference model is the physical layer. It is responsible for the actual physical connection between the devices. The physical layer contains information in the form of bits. Hub, Repeater, Modem, Cables are Physical Layer devices.
 
-![](D.png)
-as
+
+
 ## Browser sender port selection while establishing TCP connection
 ---
   A TCP connection consists of two endpoints, and each endpoint consists of an IP address and a port number. Therefore, when a client user connects to a server computer, an established connection can be thought of as the 4-tuple of (server IP, server port, client IP, client port).
@@ -42,6 +42,7 @@ as
   Different operating systems (OS) use different port ranges for ephemeral ports. Many Linux versions use port range 32768-61000, while Windows versions (until XP) use 1025-5000, by default.
   Later Windows versions, including Vista, Windows 7 and Server 2008, use the Internet Assigned Number Authority (IANA) suggested range of 49152-65535.
 
+![](Images/D.png)
 
 
 
