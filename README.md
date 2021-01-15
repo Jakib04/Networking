@@ -1,5 +1,5 @@
 ## OSI model
----
+
 ![](https://media.geeksforgeeks.org/wp-content/uploads/computer-network-osi-model-layers.png)
 
 The Open Systems Interconnection (OSI) model describes seven layers that computer systems use to communicate over a network. It helps network device manufacturers and networking software vendors: Create devices and software that can communicate with products from any other vendor, allowing open interoperability.
@@ -30,7 +30,7 @@ The Open Systems Interconnection (OSI) model describes seven layers that compute
 
 
 ## Browser sender port selection while establishing TCP connection
----
+
   A TCP connection consists of two endpoints, and each endpoint consists of an IP address and a port number. Therefore, when a client user connects to a server computer, an established connection can be thought of as the 4-tuple of (server IP, server port, client IP, client port).
 
   Usually three of the four are readily known -- client machine uses its own IP address and when connecting to a remote service, the server machine's IP address and service port number are required.
@@ -41,6 +41,10 @@ The Open Systems Interconnection (OSI) model describes seven layers that compute
 
   Different operating systems (OS) use different port ranges for ephemeral ports. Many Linux versions use port range 32768-61000, while Windows versions (until XP) use 1025-5000, by default.
   Later Windows versions, including Vista, Windows 7 and Server 2008, use the Internet Assigned Number Authority (IANA) suggested range of 49152-65535.
+
+DNS :- stands for Domain Name Server. It translates Internet domain and host names to IP addresses and vice versa.
+DNS technology allows you to type names into your Web browser like www.google.com and your computer to automatically find that address on the Internet. A key element of the DNS is a worldwide collection of DNS servers.
+nslookup (name server lookup) is a tool used to perform DNS lookups in Linux. It is used to display DNS details, such as the IP address of a particular computer,
 
 ![](Images/D.png)
 
