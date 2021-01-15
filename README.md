@@ -27,6 +27,7 @@ The Open Systems Interconnection (OSI) model describes seven layers that compute
 
    The lowest layer of the OSI reference model is the physical layer. It is responsible for the actual physical connection between the devices. The physical layer contains information in the form of bits. Hub, Repeater, Modem, Cables are Physical Layer devices.
 
+![](D.png)
 
 ## Browser sender port selection while establishing TCP connection
 ---
@@ -43,5 +44,5 @@ The Open Systems Interconnection (OSI) model describes seven layers that compute
 
 
 
-![](D.png)
+
 
