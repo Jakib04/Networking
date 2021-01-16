@@ -1,9 +1,21 @@
+## Physical Machine vs Virtual Machine
+
+A physical machine is a single-tenant computer machine meaning that a specific physical machine is designated to a single user. The resources and components of a physical machine are not shared between multiple users. Each physical machine includes memory, processor, network connection, hard drive, and an operating system (OS) for running programs and applications.
+
+
+<img src="Images/Physical-server-architecture.jpeg" width="500" height="300" />
+
+A virtual machine (VM) is a software computer used as emulation of an actual physical computer. A virtual machine operates in a “multi-tenant” environment, meaning that multiple VMs run on the same physical hardware. In this case, the computing resources of a physical server are virtualized and shared among all VMs running on it. The architecture of a virtual server is a little more complex than that of a physical server. Thus, a hypervisor is installed on top of physical hardware. A hypervisor is then used to create and manage VMs, which have their own virtual computing resources. After that, you can load multiple guest OSes and server applications on top of the virtual hardware. Thus, virtual servers allow you to run several OSes and applications on the basis of the shared physical hardware, which makes it a more cost-effective option than a physical server.
+
+
+<img src="Images/Virtual-server-architecture.jpeg" width="500" height="300" />
+
+
 ## OSI model
 
+The Open Systems Interconnection (OSI) model describes seven layers that computer systems use to communicate over a network. It helps network device manufacturers and networking software vendors: Create devices and software that can communicate with products from any other vendor, allowing open interoperability.
 
 <img src="https://media.geeksforgeeks.org/wp-content/uploads/computer-network-osi-model-layers.png" width="500" height="500" />
-
-The Open Systems Interconnection (OSI) model describes seven layers that computer systems use to communicate over a network. It helps network device manufacturers and networking software vendors: Create devices and software that can communicate with products from any other vendor, allowing open interoperability.
 
  The important layers are 
 
@@ -28,7 +40,30 @@ The Open Systems Interconnection (OSI) model describes seven layers that compute
 
    The lowest layer of the OSI reference model is the physical layer. It is responsible for the actual physical connection between the devices. The physical layer contains information in the form of bits. Hub, Repeater, Modem, Cables are Physical Layer devices.
 
+## Domain Name Server
 
+It translates Internet domain and host names to IP addresses and vice versa.DNS technology allows to type names into Web browser like www.facebook.com  and computer to automatically find that address on the Internet. 
+
+nslookup (name server lookup) is a tool used to perform DNS lookups in Linux. It is used to display DNS details, such as the IP address of a particular computer,
+
+```bash
+nslookup facebook.com
+```
+After applying this command
+
+![](Images/D.png)
+
+## NIC
+
+A network interface card (NIC) is a hardware component without which a computer cannot be connected over a network. It is a circuit board installed in a computer that provides a dedicated network connection to the computer.
+
+## Socket
+
+Socket is an interface between an application process and transport layer.A socket is bound to a port number so that the TCP layer can identify the application that data is destined to be sent to. The application process can send/receive messages to/from another application process (local or remote)via a socket.
+
+## DHCP (Dynamic Host Configuration Protocol) 
+
+DHCP (Dynamic Host Configuration Protocol) is a network management protocol used to dynamically assign an Internet Protocol (IP) address to any device, or node, on a network so they can communicate using IP. DHCP automates and centrally manages these configurations rather than requiring network administrators to manually assign IP addresses to all network devices. DHCP can be implemented on small local networks, as well as large enterprise networks.
 
 ## Browser sender port selection while establishing TCP connection
 
@@ -43,18 +78,6 @@ The Open Systems Interconnection (OSI) model describes seven layers that compute
   Different operating systems (OS) use different port ranges for ephemeral ports. Many Linux versions use port range 32768-61000, while Windows versions (until XP) use 1025-5000, by default.
   Later Windows versions, including Vista, Windows 7 and Server 2008, use the Internet Assigned Number Authority (IANA) suggested range of 49152-65535.
 
-## Domain Name Server
-
-It translates Internet domain and host names to IP addresses and vice versa.DNS technology allows to type names into Web browser like www.facebook.com  and computer to automatically find that address on the Internet. 
-
-nslookup (name server lookup) is a tool used to perform DNS lookups in Linux. It is used to display DNS details, such as the IP address of a particular computer,
-
-```bash
-nslookup facebook.com
-```
-After applying this command
-
-![](Images/D.png)
 
 ## Collision Domain vs Broadcast Domain
 
@@ -64,40 +87,23 @@ Unlike collision domains, a broadcast domain is created when a group of computer
 
 So, which of our network devices break collision domains and which of them break broadcast domains? 
 
- 
+**HUB**
 
-    HUB – 
-    It neither breaks a collision domain nor a broadcast domain,i.e a hub is neither a collision domain separator nor a broadcast domain separator. All the devices connected to a hub is in a single collision and single broadcast domain.
+It neither breaks a collision domain nor a broadcast domain,i.e a hub is neither a collision domain separator nor a broadcast domain separator. All the devices connected to a hub is in a single collision and single broadcast domain.
     
-    SWITCH – 
-    Coming to switches, we have an advantage over the hub. Every port on a switch is in a different collision domain, i.e a switch is a collision domain separator. So messages that come from devices connected to different ports never experience a collision. This helps us during designing networks but there is still a problem with switches. They never break broadcast domains, means it is not a broadcast domain separator. All the ports on the switch are in still in a single broadcast domain. If a device sends a broadcast message, it will still cause congestion.
+**SWITCH**
 
-    ROUTER – 
-    A router not only breaks collision domains but also break broadcast domains, means it is both collision as well as broadcast domain separator. A router creates a connection between two networks. A broadcast message from one network will never reach the other one as the router will never let it pass. 
+Coming to switches, we have an advantage over the hub. Every port on a switch is in a different collision domain, i.e a switch is a collision domain separator. So messages that come from devices connected to different ports never experience a collision. This helps us during designing networks but there is still a problem with switches. They never break broadcast domains, means it is not a broadcast domain separator. All the ports on the switch are in still in a single broadcast domain. If a device sends a broadcast message, it will still cause congestion.
+
+**ROUTER**
+
+A router not only breaks collision domains but also break broadcast domains, means it is both collision as well as broadcast domain separator. A router creates a connection between two networks. A broadcast message from one network will never reach the other one as the router will never let it pass. 
      
 
-##DHCP (Dynamic Host Configuration Protocol) 
-
-DHCP (Dynamic Host Configuration Protocol) is a network management protocol used to dynamically assign an Internet Protocol (IP) address to any device, or node, on a network so they can communicate using IP. DHCP automates and centrally manages these configurations rather than requiring network administrators to manually assign IP addresses to all network devices. DHCP can be implemented on small local networks, as well as large enterprise networks.
-
-DHCP will assign new IP addresses in each location when devices are moved from place to place, which means network administrators do not have to manually configure each device with a valid IP address or reconfigure the device with a new IP address if it moves to a new location on the network
-
-##Socket
-
-Socket is an interface between an application process and transport layer.A socket is bound to a port number so that the TCP layer can identify the application that data is destined to be sent to. The application process can send/receive messages to/from another application process (local or remote)via a socket.
-
-##NIC
-
-A network interface card (NIC) is a hardware component without which a computer cannot be connected over a network. It is a circuit board installed in a computer that provides a dedicated network connection to the computer.
-
-## Physical Machine vs Virtual Machine
-
-A physical server, also known as a ‘bare-metal server,’ is a single-tenant computer server, meaning that a specific physical server is designated to a single user. The resources and components of a physical server are not shared between multiple users. Each physical server includes memory, processor, network connection, hard drive, and an operating system (OS) for running programs and applications.
 
 
-<img src="Images/Physical-server-architecture.jpeg" width="500" height="500" />
-
-A virtual machine (VM) is a software computer used as emulation of an actual physical computer. A virtual server operates in a “multi-tenant” environment, meaning that multiple VMs run on the same physical hardware. In this case, the computing resources of a physical server are virtualized and shared among all VMs running on it. The architecture of a virtual server is a little more complex than that of a physical server. Thus, a hypervisor, such as VMware vSphere or Microsoft Hyper-V, is installed on top of physical hardware. A hypervisor is then used to create and manage VMs, which have their own virtual computing resources. After that, you can load multiple guest OSes and server applications on top of the virtual hardware. Thus, virtual servers allow you to run several OSes and applications on the basis of the shared physical hardware, which makes it a more cost-effective option than a physical server.
 
 
-<img src="Images/Virtual-server-architecture.jpeg" width="500" height="500" />
+
+
+
