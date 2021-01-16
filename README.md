@@ -46,7 +46,7 @@ The Open Systems Interconnection (OSI) model describes seven layers that compute
 
 ## Domain Name Server
 
-It translates Internet domain and host names to IP addresses and vice versa.DNS technology allows to type names into Web browser like www.facebook.com  and computer to automatically find that address on the Internet. 
+It translates Internet domain and host names to IP addresses and vice versa. DNS technology allows to type names into Web browser like www.facebook.com  and computer to automatically find that address on the Internet. 
 
 nslookup (name server lookup) is a tool used to perform DNS lookups in Linux. It is used to display DNS details, such as the IP address of a particular computer,
 
