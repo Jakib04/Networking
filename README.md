@@ -1,14 +1,18 @@
 ## Physical Machine vs Virtual Machine
 
+<img src="Images/Physical-server-architecture.jpeg" width="500" height="300" />
+
 A physical machine is a single-tenant computer machine meaning that a specific physical machine is designated to a single user. The resources and components of a physical machine are not shared between multiple users. Each physical machine includes memory, processor, network connection, hard drive, and an operating system (OS) for running programs and applications.
 
 
-<img src="Images/Physical-server-architecture.jpeg" width="500" height="300" />
+<img src="Images/Virtual-server-architecture.jpeg" width="500" height="300" />
+
+
 
 A virtual machine (VM) is a software computer used as emulation of an actual physical computer. A virtual machine operates in a “multi-tenant” environment, meaning that multiple VMs run on the same physical hardware. In this case, the computing resources of a physical server are virtualized and shared among all VMs running on it. The architecture of a virtual server is a little more complex than that of a physical server. Thus, a hypervisor is installed on top of physical hardware. A hypervisor is then used to create and manage VMs, which have their own virtual computing resources. After that, you can load multiple guest OSes and server applications on top of the virtual hardware. Thus, virtual servers allow you to run several OSes and applications on the basis of the shared physical hardware, which makes it a more cost-effective option than a physical server.
 
 
-<img src="Images/Virtual-server-architecture.jpeg" width="500" height="300" />
+
 
 
 ## OSI model
