@@ -57,6 +57,7 @@ After applying this command
 
 A network interface card (NIC) is a hardware component without which a computer cannot be connected over a network. It is a circuit board installed in a computer that provides a dedicated network connection to the computer.
 
+
 ## Socket
 
 Socket is an interface between an application process and transport layer.A socket is bound to a port number so that the TCP layer can identify the application that data is destined to be sent to. The application process can send/receive messages to/from another application process (local or remote)via a socket.
@@ -98,8 +99,30 @@ Coming to switches, we have an advantage over the hub. Every port on a switch is
 **ROUTER**
 
 A router not only breaks collision domains but also break broadcast domains, means it is both collision as well as broadcast domain separator. A router creates a connection between two networks. A broadcast message from one network will never reach the other one as the router will never let it pass. 
-     
 
+## CIDR
+
+CIDR, which stands for Classless Inter-Domain Routing, is an IP addressing scheme that improves the allocation of IP addresses. It replaces the old system based on classes A, B, and C.
+CIDR is based on variable-length subnet masking (VLSM). This allows it to define prefixes of arbitrary lengths making it much more efficient than the old system. CIDR IP addresses are composed of two sets of numbers. The network address is written as a prefix, like you would see a normal IP address (e.g. 192.255.255.255). The second part is the suffix which indicates how many bits are in the entire address (e.g. /12). Putting it together, a CIDR IP address would look like the following:
+
+192.168.255.255/12
+
+The network prefix is also specified as part of the IP address. This varies depending upon the number of bits required. Therefore, taking the example above, we can say that the first 12 bits are the network part of the address while the last 20 bits are for host addresses.
+
+
+## Configuring an IP address on a switch
+
+By default, Cisco switches forward Ethernet frames without any configuration. This means that you can buy a Cisco switch, plug in the right cables to connect various devices to the switch, power it on, and the switch will work properly.
+
+However, to perform switch management over the network or use protocols such as SNMP, the switch will need to have an IP address. The IP address is configured under a logical interface, known as the management domain or VLAN. Usually, the default VLAN 1 acts like the switch’s own NIC for connecting into a LAN to send IP packets.
+
+ Here are the steps to configure an IP address under VLAN 1:
+
+  1. enter the VLAN 1 configuration mode with the interface vlan 1 global configuration command. 
+  2. assign an IP address with the ip address IP_ADDRESS SUBNET_MASK interface subcommand. 
+  3. enable the VLAN 1 interface with the no shutdown interface subcommand. 
+  4. (Optional) use the ip default-gateway IP_ADDRESS global configuration command to configure the default gateway. 
+  5. (Optional) Add the ip name-server IP_ADDRESS global configuration command to configure the DNS server
 
 
 
